@@ -1,0 +1,20 @@
+.switchWrapper {
+  position: relative;
+  @keyframes switchMove {
+    from {
+      top: 0px;
+    }
+    to {
+      top: 200px;
+    }
+  }
+
+  > :first-child ~ * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: switchMove 1.2s ease-in-out;
+    animation-direction: reverse;
+  }
+}
