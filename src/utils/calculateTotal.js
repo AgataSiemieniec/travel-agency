@@ -1,6 +1,7 @@
 import pricing from '../data/pricing.json';
 import {parseOptionPrice} from './parseOptionPrice';
-
+// funkcja , która oblicza cenę zamówienia na podstawie bazowej ceny wycieczki, opcji zapisanych w stanie aplikacji,
+// oraz danych z pliku pricing.json
 export const calculateTotal = (tripCost, options) => {
   let total = parseOptionPrice(tripCost).value;
   let multiplier = 0;

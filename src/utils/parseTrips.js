@@ -1,5 +1,7 @@
 import countries from '../data/countries.json';
 import pricing from '../data/pricing.json';
+//zawiera kod odpowiedzialny za wygenerowanie pierwotnego obiektu
+//order w stanie aplikacji, w oparciu o definicję opcji zamówienia znajdującą się w pricing.json.
 
 const parseTrips = (trips, setStates) => {
   const newState = {

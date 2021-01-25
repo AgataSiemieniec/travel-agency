@@ -1,3 +1,6 @@
+// funkcję, która rozpozna, czy otrzymała liczbę, czy tekst ze sformatowaną ceną, czy też współczynnik procentowy
+// (np. 50%) – dzięki temu będzie nam łatwiej rozpoznawać ceny zapisane w pricing.json.
+
 export const parseOptionPrice = price => {
   if (typeof (price) == 'number') {
     return { type: 'number', value: price };
