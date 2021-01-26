@@ -8,7 +8,7 @@ export const calculateTotal = (tripCost, options) => {
   for (let option of pricing) {
     const currentValue = options[option.id];
     if (typeof (currentValue) != 'undefined') {
-      if (Array.isArray(currentValue) && Array.isArray(option.values)) {
+      if (Array.isArray(currentValue) && Array.isArray(option.values)) { // kod dotyczy checkboxes,
         for (let optionId of currentValue) {
           const value = option.values.filter(opt => opt.id == optionId)[0];
           const price = parseOptionPrice(value.price);
