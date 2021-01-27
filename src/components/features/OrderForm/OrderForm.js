@@ -26,4 +26,5 @@ OrderForm.propTypes = {
   options: PropTypes.object,
   setOrderOption: PropTypes.func,
 };
+
 export default OrderForm;

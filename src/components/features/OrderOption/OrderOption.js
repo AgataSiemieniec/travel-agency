@@ -12,7 +12,7 @@ const optionTypes = {
   number: OrderOptionNumber,
 }; //Kluczami tego obiektu są typy opcji, a wartościami – komponenty, które im odpowiadają.
 
-const OrderOption = ({name, type, ...otherProps}) => {
+const OrderOption = ({name, type, id, setOrderOption, ...otherProps}) => {
   const OptionComponent = optionTypes[type];
   if(!OptionComponent){
     return null;
@@ -20,7 +20,7 @@ const OrderOption = ({name, type, ...otherProps}) => {
     return (
       <div className={styles.component}>
         <h3 className={styles.title}>{name}</h3>
-        <OptionComponent
+        <OptionComponent setOptionValue={value => setOrderOption({[id]: value})} // wywołanie funkcji, przekazując obiekt. W obiekcie jedna właściwość, której kluczem jest props id, a wartosć to argument.
           {...otherProps}
         />
       </div>
