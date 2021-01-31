@@ -6,7 +6,14 @@ describe('Component TripSummary', () => {
   it('should generate a link to the correct address', () => {
     const expectedLink = '/trip/Bleee';
     const component = shallow(
-      <TripSummary id='Bleee' />);
+      <TripSummary
+        id='Bleee'
+        image='image.jpg'
+        name='name'
+        cost='300'
+        days={10}
+        tags={[]}
+      />);
     expect(component.find('.link').prop('to')).toEqual(expectedLink);
   });
 
@@ -18,6 +25,9 @@ describe('Component TripSummary', () => {
         id="id"
         image={expectedSrc}
         name={expectedAlt}
+        cost='300'
+        days={10}
+        tags={[]}
       />);
     expect(component.find('img').prop('src')).toEqual(expectedSrc);
     expect(component.find('img').prop('alt')).toEqual(expectedAlt);
@@ -34,16 +44,14 @@ describe('Component TripSummary', () => {
         name={expectedName}
         cost={expectedCost}
         days={expectedDays}
+        tags={[]}
       />);
 
     const renderedName = component.find('.title').text();
     expect(renderedName).toEqual(expectedName);
 
-    const renderedCost = component.find('.details span').at(1).text();
-    expect(renderedCost).toEqual(expectedCost);
-
-    const renderedDays = component.find('details span').at(0).text();
-    expect(renderedDays).toEqual(expectedDays);
+    expect(component.find('.details span').at(0).text()).toEqual (`${expectedDays} days`);
+    expect(component.find('.details span').at(1).text()).toBe (`from ${expectedCost}`);
   });
 
   it('should throw error without props', () => {
@@ -55,7 +63,7 @@ describe('Component TripSummary', () => {
     const component = shallow(
       <TripSummary
         id="id"
-        image= 'image.img'
+        image= 'image.jpg'
         tags={expectedTags}
         name='name'
         cost='300'
@@ -70,7 +78,7 @@ describe('Component TripSummary', () => {
     const component = shallow(
       <TripSummary
         id="id"
-        image= 'image.img'
+        image= 'image.jpg'
         tags={[]}
         name='name'
         cost='300'
