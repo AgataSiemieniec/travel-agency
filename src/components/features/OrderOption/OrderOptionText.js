@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const OrderOptionText = () => (
   <div className={styles.component}>
-    <input type="text"/>
+    <input type="text"></input>
   </div>
 );
 

@@ -74,6 +74,7 @@ describe('Component TripSummary', () => {
     expect(component.find('.tags span').at(1).text()).toEqual('spa');
     expect(component.find('.tags span').at(2).text()).toEqual('beach');
   });
+
   it('should not render if props tags is false, not given or is an empty array', () => {
     const component = shallow(
       <TripSummary
@@ -87,4 +88,5 @@ describe('Component TripSummary', () => {
     );
     expect(component.hasClass('tags')).toBe(false);
   });
+
 });
