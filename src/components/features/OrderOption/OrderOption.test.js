@@ -98,6 +98,7 @@ for(let type in optionTypes){
       expect(subcomponent).toBeTruthy();
       expect(subcomponent.length).toBe(1);
     });
+
     /* type-specific tests -testy dla konkretnych typów opcji  */
     switch (type) {
       /* tests for dropdown */
@@ -150,7 +151,6 @@ for(let type in optionTypes){
           expect(mockSetOrderOption).toBeCalledTimes(1);
           expect(mockSetOrderOption).toBeCalledWith({[mockProps.id]: [mockProps.currentValue, testValue]});
         });
-
         break;
       }
 
@@ -166,7 +166,6 @@ for(let type in optionTypes){
           expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValueNumber });
         });
         break;
-
       }
 
       /* tests for text */
@@ -189,17 +188,16 @@ for(let type in optionTypes){
           const date = renderedSubcomponent.find('DatePicker');
           expect(date).toBeTruthy();
         });
-
         it('should run setOrderOption function on change', () => {
           renderedSubcomponent.find(DatePicker).simulate('change', testValue);
           expect(mockSetOrderOption).toBeCalledTimes(1);
           expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
         });
-
         break;
       }
     }
   });
 }
+
 // Wewnątrz pętli wykorzystujemy describe do stworzenia nowego pakietu testów,
 // którego opis zawiera typ, po którym aktualnie iterujemy
