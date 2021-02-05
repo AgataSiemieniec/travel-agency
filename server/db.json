@@ -211,6 +211,38 @@
       "tripName": "Pleasant trek in outstanding Togo",
       "countryCode": "TGO",
       "id": 16
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "2021-02-01T23:00:00.000Z",
+      "totalCost": "$29,319",
+      "tripId": "5cc1d10181a30e85c8d9ad4a",
+      "tripName": "Pleasant trek in outstanding Togo",
+      "countryCode": "TGO",
+      "id": 17
+    },
+    {
+      "car-rental": "full",
+      "accommodation": "hotel",
+      "features": [
+        "all-inclusive"
+      ],
+      "adults": "3",
+      "children": "2",
+      "name": "Agata",
+      "contact": "ffffff",
+      "start-date": "2021-02-01T23:00:00.000Z",
+      "totalCost": "$118,476",
+      "tripId": "5cc1d10181a30e85c8d9ad4a",
+      "tripName": "Pleasant trek in outstanding Togo",
+      "countryCode": "TGO",
+      "id": 18
     }
   ]
 }

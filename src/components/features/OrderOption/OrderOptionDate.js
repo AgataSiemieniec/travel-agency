@@ -1,33 +1,18 @@
 import React from 'react';
-import DatePicker from 'react-datepicker';
 import PropTypes from 'prop-types';
+import styles from './OrderOption.scss';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+import DatePicker from 'react-datepicker';
 
-class OrderOptionDate extends React.Component {
-  state = {
-    startDate: new Date(),
-  };
+const OrderOptionDate = ({setOptionValue, currentValue}) => (
+  <div className={styles.date}>
+    <DatePicker selected={currentValue} onChange={date => setOptionValue(date)} />
+  </div>
+);
 
-  static propTypes = {
-    setOptionValue: PropTypes.func,
-  }
-
-  handleChange = date => {
-    const {setOptionValue} = this.props;
-    this.setState({
-      startDate: date,
-    });
-    setOptionValue(date);
-  };
-
-  render() {
-    return (
-      <DatePicker
-        selected={this.state.startDate}
-        onChange={this.handleChange}
-      />
-    );
-  }
-}
+OrderOptionDate.propTypes = {
+  setOptionValue: PropTypes.func,
+  currentValue: PropTypes.any,
+};
 
 export default OrderOptionDate;
