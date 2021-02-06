@@ -20,4 +20,14 @@ describe('Component HappyHourAd', () => {
     expect(component.exists(select.title)).toEqual(true);
     expect(component.exists(select.promoDescription)).toEqual(true);
   });
+
+  const mockProps = {
+    title: 'Happy Hour',
+    promoDescription: 'Its your time! Take advantage of Happy Hour! All offers 20% off!',
+  };
+
+  it('should render props title', () => {
+    const component = shallow(<HappyHourAd {...mockProps} />);
+    expect(component.find(select.title).text()).toEqual(mockProps.title);
+  });
 });
