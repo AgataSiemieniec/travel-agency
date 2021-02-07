@@ -7,7 +7,7 @@ class HappyHourAd extends React.Component {
   constructor(){
     super();
 
-    setTimeout(() =>
+    setInterval(() =>
       this.forceUpdate(), 1000);
   }
 
@@ -19,7 +19,7 @@ class HappyHourAd extends React.Component {
       nextNoon.setUTCDate(currentTime.getUTCDate()+1);
     }
 
-    return Math.round((nextNoon.getTime() - currentTime.getTime())/1000);
+    return Math.round((nextNoon.getTime() - currentTime.getTime()) /1000);
   }
 
   render(){
@@ -28,7 +28,7 @@ class HappyHourAd extends React.Component {
     return (
       <div className={styles.component}>
         <h3 className={styles.title}>{title}</h3>
-        <div className={styles.promoDescription}>{(countdownTime > 23 * 60 * 60) ?  promoDescription : countdownTime}</div>
+        <div className={styles.promoDescription}>{countdownTime > 23 * 60 * 60 ?  promoDescription : countdownTime}</div>
       </div>
     );
   }

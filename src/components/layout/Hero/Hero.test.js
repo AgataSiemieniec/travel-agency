@@ -30,4 +30,12 @@ describe('Component Hero', () => {
     expect(component.hasClass('small')).toBe(true);
     expect(component.hasClass('dummy')).toBe(true);
   });
+
+  it('should render HappyHourAd', () => {
+    const expectedTitle = 'Lorem ipsum';
+    const expectedImage = 'image.jpg';
+    const component = shallow(<Hero titleText={expectedTitle} imageSrc={expectedImage} />);
+
+    expect(component.find('HappyHourAd').length).toEqual(1);
+  });
 }); //Stosujemy tutaj funkcję strzałkową, aby funkcja expect mogła bez zwracania błędu wykonać kod shallow(<Hero />), który powinien zwrócić błąd.
