@@ -1,0 +1,14 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+
+  .description {
+    position: absolute;
+    width: 100%;
+    bottom: 220px;
+  }
+}
